@@ -148,6 +148,15 @@
   </footer>
 
   <script>
+    const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    body.classList.remove('dark');
+  } else {
+    body.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+  }
+
+    
     const body = document.getElementById('body');
     const toggle = document.getElementById('toggle-dark');
     const toggleMobile = document.getElementById('toggle-dark-mobile');
@@ -155,7 +164,7 @@
     const mobileMenu = document.getElementById('mobile-menu');
   
     // 1. Aplica o tema salvo
-    const savedTheme = localStorage.getItem('theme');
+    // const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
       body.classList.add('dark');
     }
