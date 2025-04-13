@@ -151,9 +151,12 @@
   
     // 1. Aplica o tema salvo
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      body.classList.add('dark');
-    }
+if (savedTheme === 'light') {
+  body.classList.remove('dark');
+} else {
+  body.classList.add('dark');
+  localStorage.setItem('theme', 'dark');
+}
   
     // 2. Alterna tema e salva no localStorage
     function toggleTheme() {
