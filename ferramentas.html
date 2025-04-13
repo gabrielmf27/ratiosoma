@@ -176,9 +176,12 @@
     const mobileMenu = document.getElementById('mobile-menu');
 
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      body.classList.add('dark');
-    }
+if (savedTheme === 'light') {
+  body.classList.remove('dark');
+} else {
+  body.classList.add('dark');
+  localStorage.setItem('theme', 'dark');
+}
 
     function toggleTheme() {
       body.classList.toggle('dark');
