@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="imagex/png" href="images/logo_ratiosoma.png">
+  <title>Notas - RatioSoma</title>
+  <script src="tailwind.js"></script>
+  <style>
+    html {
+  overflow-y: scroll;
+    }
+
+    body {
+      background-color: #e9ebee;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .background-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .background-overlay::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('images/logo_ratiosoma_faded.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+      transition: background-image 0.3s ease;
+    }
+
+    body.dark .background-overlay::before {
+      background-image: url('images/logo_ratiosoma_faded_dark.png');
+    }
+
+    body.dark {
+      background-color: #0b0d10;
+      color: #e5e7eb;
+    }
+
+    body.dark h1,
+    body.dark h2,
+    body.dark h3 {
+      color: #e5e7eb !important;
+    }
+
+    body.dark nav a {
+      color: #e5e7eb;
+    }
+
+    body.dark p {
+      color: #cbd5e1;
+    }
+
+    body.dark .dark\:bg-soft-dark {
+      background-color: #1f2937;
+    }
+
+    body.dark .bg-white {
+      background-color: #1a1f2b !important;
+    }
+
+    body.dark .text-[#1A2E50] {
+      color: #c3dafe !important;
+    }
+
+    body.dark .text-[#1A2E50]/70 {
+      color: #94a3b8 !important;
+    }
+  </style>
+</head>
+<body class="text-[#1A2E50] min-h-screen flex flex-col mx-auto relative" id="body">
+  <div class="background-overlay"></div>
+
+  <!-- Header -->
+  <header class="px-6 py-4 bg-white shadow-md z-10 dark:bg-soft-dark">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="images/logo_ratiosoma.png" alt="Logo RatioSoma" class="w-10 h-10">
+        <h1 class="text-xl font-semibold">RatioSoma</h1>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-[#1A2E50] dark:text-[#e5e7eb] focus:outline-none">
+          &#9776;
+        </button>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium" id="menu">
+        <a href="index.html" class="hover:text-[#36B58B]">Início</a>
+        <a href="sobre.html" class="hover:text-[#36B58B]">Sobre</a>
+        <a href="notas.html" class="hover:text-[#36B58B]">Notas</a>
+        <a href="ferramentas.html" class="hover:text-[#36B58B]">Ferramentas</a>
+        <button id="toggle-dark" class="ml-2 bg-[#36B58B] hover:bg-[#2e9d79] text-white px-3 py-1 rounded-xl text-sm transition">
+          Modo Noturno
+        </button>
+      </nav>
+    </div>
+    <!-- Mobile menu -->
+    <div class="md:hidden hidden flex flex-col gap-2 mt-4 text-sm font-medium" id="mobile-menu">
+      <a href="index.html" class="hover:text-[#36B58B]">Início</a>
+      <a href="sobre.html" class="hover:text-[#36B58B]">Sobre</a>
+      <a href="notas.html" class="hover:text-[#36B58B]">Notas</a>
+      <a href="ferramentas.html" class="hover:text-[#36B58B]">Ferramentas</a>
+      <button id="toggle-dark-mobile" class="w-fit bg-[#36B58B] hover:bg-[#2e9d79] text-white px-3 py-1 rounded-xl text-sm transition">
+        Modo Noturno
+      </button>
+    </div>
+  </header>
+
+  <!-- Conteúdo da página Artigos -->
+  <main class="flex-grow px-6 py-12 max-w-3xl mx-auto text-justify">
+    <h2 class="text-3xl font-bold mb-6">Notas</h2>
+      <p class="mb-6">
+         Nesta seção, compartilho <strong>notas sobre Medicina, tecnologia e raciocínio clínico</strong>. São textos curtos ou mais desenvolvidos, sempre com o objetivo de tornar o pensamento técnico mais claro e aplicável na prática.
+      </p>
+      <p class="mb-6">
+         O conteúdo aqui não segue um formato rígido: pode ser uma ideia em desenvolvimento, uma explicação didática, uma crítica construtiva ou um experimento técnico. Tudo com a proposta central do RatioSoma: <strong>usar lógica para entender o corpo — e cuidar melhor de quem precisa.</strong>
+      </p>
+
+    <a href="#" class="block bg-white dark:bg-[#1a1f2b] shadow rounded-xl p-6 mb-6 hover:shadow-md transition">
+        <h3 class="text-xl font-semibold text-[#1A2E50] dark:text-[#c3dafe] mb-1">
+          Ops! Ainda não temos nada por aqui.
+        </h3>
+        <p class="text-sm text-[#1A2E50]/70 dark:text-[#94a3b8] mb-2">
+          Nessa área, você vai encontrar diversos conteúdos sobre temas variados. Estamos em construção!
+        </p>
+        <div class="text-xs text-[#A4A7B0] dark:text-[#94a3b8]">
+          Por Gabriel Muhammad • 13 de abril de 2025
+        </div>
+      </a>
+
+  </main>
+  
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-[#A4A7B0] py-6 dark:text-[#94a3b8]">
+    RatioSoma © 2025 • Criado por Gabriel Muhammad • Uso educacional
+  </footer>
+
+  <script>
+    const body = document.getElementById('body');
+    const toggle = document.getElementById('toggle-dark');
+    const toggleMobile = document.getElementById('toggle-dark-mobile');
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+  
+    // 1. Aplica o tema salvo
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark');
+    }
+  
+    // 2. Alterna tema e salva no localStorage
+    function toggleTheme() {
+      body.classList.toggle('dark');
+      const isDark = body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+  
+    toggle?.addEventListener('click', toggleTheme);
+    toggleMobile?.addEventListener('click', toggleTheme);
+  
+    // 3. Menu mobile
+    menuToggle?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

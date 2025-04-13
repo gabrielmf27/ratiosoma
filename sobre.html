@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="imagex/png" href="images/logo_ratiosoma.png">
+  <title>Sobre - RatioSoma</title>
+  <script src="tailwind.js"></script>
+  <style>
+    html {
+  overflow-y: scroll;
+    }
+
+    body {
+      background-color: #e9ebee;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .background-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .background-overlay::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('images/logo_ratiosoma_faded.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+      transition: background-image 0.3s ease;
+    }
+
+    body.dark .background-overlay::before {
+      background-image: url('images/logo_ratiosoma_faded_dark.png');
+    }
+
+    body.dark {
+      background-color: #0b0d10;
+      color: #e5e7eb;
+    }
+
+    body.dark h1,
+    body.dark h2,
+    body.dark h3 {
+      color: #e5e7eb !important;
+    }
+
+    body.dark nav a {
+      color: #e5e7eb;
+    }
+
+    body.dark p {
+      color: #cbd5e1;
+    }
+
+    body.dark .dark\:bg-soft-dark {
+      background-color: #1f2937;
+    }
+
+    body.dark .bg-white {
+      background-color: #1a1f2b !important;
+    }
+
+    body.dark .text-[#1A2E50] {
+      color: #c3dafe !important;
+    }
+
+    body.dark .text-[#1A2E50]/70 {
+      color: #94a3b8 !important;
+    }
+  </style>
+</head>
+<body class="text-[#1A2E50] min-h-screen flex flex-col mx-auto relative" id="body">
+  <div class="background-overlay"></div>
+
+  <!-- Header -->
+  <header class="px-6 py-4 bg-white shadow-md z-10 dark:bg-soft-dark">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="images/logo_ratiosoma.png" alt="Logo RatioSoma" class="w-10 h-10">
+        <h1 class="text-xl font-semibold">RatioSoma</h1>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-[#1A2E50] dark:text-[#e5e7eb] focus:outline-none">
+          &#9776;
+        </button>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium" id="menu">
+        <a href="index.html" class="hover:text-[#36B58B]">Início</a>
+        <a href="sobre.html" class="hover:text-[#36B58B]">Sobre</a>
+        <a href="notas.html" class="hover:text-[#36B58B]">Notas</a>
+        <a href="ferramentas.html" class="hover:text-[#36B58B]">Ferramentas</a>
+        <button id="toggle-dark" class="ml-2 bg-[#36B58B] hover:bg-[#2e9d79] text-white px-3 py-1 rounded-xl text-sm transition">
+          Modo Noturno
+        </button>
+      </nav>
+    </div>
+    <!-- Mobile menu -->
+    <div class="md:hidden hidden flex flex-col gap-2 mt-4 text-sm font-medium" id="mobile-menu">
+      <a href="index.html" class="hover:text-[#36B58B]">Início</a>
+      <a href="sobre.html" class="hover:text-[#36B58B]">Sobre</a>
+      <a href="notas.html" class="hover:text-[#36B58B]">Notas</a>
+      <a href="ferramentas.html" class="hover:text-[#36B58B]">Ferramentas</a>
+      <button id="toggle-dark-mobile" class="w-fit bg-[#36B58B] hover:bg-[#2e9d79] text-white px-3 py-1 rounded-xl text-sm transition">
+        Modo Noturno
+      </button>
+    </div>
+  </header>
+
+  <!-- Conteúdo da página Sobre -->
+  <main class="flex-grow px-6 py-12 max-w-3xl mx-auto text-justify">
+    <h2 class="text-3xl font-bold mb-6">Sobre o projeto</h2>
+    <p class="mb-6">
+      <strong>O RatioSoma é uma plataforma de ferramentas médicas pensada para ser prática, técnica e direta.</strong><br>
+      Criado por alguém que vive a realidade da faculdade de Medicina e que entende tecnologia, o projeto automatiza cálculos, organiza dados e simplifica tarefas clínicas repetitivas — sem perder o foco no raciocínio médico.
+    </p>
+
+    <h3 class="text-2xl font-semibold mt-8 mb-3">Por que esse nome?</h3>
+    <p class="mb-6">
+      <strong>Ratio + Soma.</strong><br>
+      A ideia é simples: aplicar lógica (ratio) ao estudo do corpo (soma). O nome reflete o objetivo do projeto — eliminar o que é mecânico, e dar mais espaço ao que exige pensamento clínico estruturado.
+    </p>
+
+    <h3 class="text-2xl font-semibold mt-8 mb-3">Quem está por trás</h3>
+    <p class="mb-6">
+      Sou <strong>Gabriel Muhammad</strong>, estudante de Medicina na UNIRIO, com formação técnica em Informática. Já atuei com monitoria, pesquisa científica e desenvolvimento de ferramentas digitais. O RatioSoma é uma iniciativa pessoal, que une minha formação técnica e a vivência na prática médica. Tudo aqui foi feito com foco em quem está no atendimento — sem rodeios.
+    </p>
+
+    <h3 class="text-2xl font-semibold mt-8 mb-3">O que você vai encontrar por aqui</h3>
+    <ul class="list-disc list-inside mb-6">
+      <li>Ferramentas confiáveis, com base em literatura médica;</li>
+      <li>Interface responsiva, pensada para funcionar bem no celular ou no desktop;</li>
+      <li>Textos enxutos, sem linguagem artificial, voltados para uso direto na prática.</li>
+    </ul>
+    <p class="mb-6">
+      No momento, o site oferece calculadoras clínicas, escores e estimativas úteis. Em breve, serão adicionadas novas ferramentas, algoritmos e funcionalidades interativas.
+    </p>
+
+    <h3 class="text-2xl font-semibold mt-8 mb-3">Feedback ou sugestões?</h3>
+    <p>
+      Fique à vontade para entrar em contato ou acompanhar o projeto por aqui:
+    </p>
+    <ul class="mt-2 list-none">
+      <li><strong>GitHub:</strong> <a href="https://github.com/gabrielmf27" class="text-[#36B58B] hover:underline" target="_blank">github.com/gabrielmf27</a></li>
+      <li><strong>Instagram:</strong> <a href="https://instagram.com/gabrielmuhammadf" class="text-[#36B58B] hover:underline" target="_blank">@gabrielmuhammadf</a></li>
+      <li><strong>E-mail:</strong> <a href="mailto:gabrielmuhammadferreira@gmail.com" class="text-[#36B58B] hover:underline">gabrielmuhammadferreira@gmail.com</a></li>
+    </ul>
+  </main>
+  
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-[#A4A7B0] py-6 dark:text-[#94a3b8]">
+    RatioSoma © 2025 • Criado por Gabriel Muhammad • Uso educacional
+  </footer>
+
+  <script>
+    const body = document.getElementById('body');
+    const toggle = document.getElementById('toggle-dark');
+    const toggleMobile = document.getElementById('toggle-dark-mobile');
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+  
+    // 1. Aplica o tema salvo
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark');
+    }
+  
+    // 2. Alterna tema e salva no localStorage
+    function toggleTheme() {
+      body.classList.toggle('dark');
+      const isDark = body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+  
+    toggle?.addEventListener('click', toggleTheme);
+    toggleMobile?.addEventListener('click', toggleTheme);
+  
+    // 3. Menu mobile
+    menuToggle?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

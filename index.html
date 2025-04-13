@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="imagex/png" href="images/logo_ratiosoma.png">
+  <title>RatioSoma</title>
+  <script src="tailwind.js"></script>
+  <style>
+    html {
+  overflow-y: scroll;
+    }
+    
+    body {
+      background-color: #e9ebee;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .background-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .background-overlay::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('images/logo_ratiosoma_faded.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+      transition: background-image 0.3s ease;
+    }
+
+    body.dark .background-overlay::before {
+      background-image: url('images/logo_ratiosoma_faded_dark.png');
+    }
+
+    body.dark {
+      background-color: #0b0d10;
+      color: #e5e7eb;
+    }
+
+    body.dark h1,
+    body.dark h2,
+    body.dark h3 {
+      color: #e5e7eb !important;
+    }
+
+    body.dark nav a {
+      color: #e5e7eb;
+    }
+
+    body.dark p {
+      color: #cbd5e1;
+    }
+
+    body.dark .dark\:bg-soft-dark {
+      background-color: #1f2937;
+    }
+
+    body.dark .bg-white {
+      background-color: #1a1f2b !important;
+    }
+
+    body.dark .text-[#1A2E50] {
+      color: #c3dafe !important;
+    }
+
+    body.dark .text-[#1A2E50]/70 {
+      color: #94a3b8 !important;
+    }
+  </style>
+</head>
+<body class="text-[#1A2E50] min-h-screen flex flex-col mx-auto relative" id="body">
+  <div class="background-overlay"></div>
+
+  <!-- Header -->
+  <header class="px-6 py-4 bg-white shadow-md z-10 dark:bg-soft-dark">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="images/logo_ratiosoma.png" alt="Logo RatioSoma" class="w-10 h-10">
+        <h1 class="text-xl font-semibold">RatioSoma</h1>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-[#1A2E50] dark:text-[#e5e7eb] focus:outline-none">
+          &#9776;
+        </button>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium" id="menu">
+        <a href="index.html" class="hover:text-[#36B58B]">Início</a>
+        <a href="sobre.html" class="hover:text-[#36B58B]">Sobre</a>
+        <a href="notas.html" class="hover:text-[#36B58B]">Notas</a>
+        <a href="ferramentas.html" class="hover:text-[#36B58B]">Ferramentas</a>
+        <button id="toggle-dark" class="ml-2 bg-[#36B58B] hover:bg-[#2e9d79] text-white px-3 py-1 rounded-xl text-sm transition">
+          Modo Noturno
+        </button>
+      </nav>
+    </div>
+    <!-- Mobile menu -->
+    <div class="md:hidden hidden flex flex-col gap-2 mt-4 text-sm font-medium" id="mobile-menu">
+      <a href="index.html" class="hover:text-[#36B58B]">Início</a>
+      <a href="sobre.html" class="hover:text-[#36B58B]">Sobre</a>
+      <a href="notas.html" class="hover:text-[#36B58B]">Notas</a>
+      <a href="ferramentas.html" class="hover:text-[#36B58B]">Ferramentas</a>
+      <button id="toggle-dark-mobile" class="w-fit bg-[#36B58B] hover:bg-[#2e9d79] text-white px-3 py-1 rounded-xl text-sm transition">
+        Modo Noturno
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="flex-grow flex flex-col items-center justify-center text-center px-6 py-20">
+    <h2 class="text-3xl md:text-5xl font-bold mb-4">Ferramentas para facilitar sua prática clínica.</h2>
+    <p class="text-lg md:text-xl text-[#A4A7B0] mb-8 max-w-xl">
+        Automatize o que toma tempo. Concentre-se no que exige raciocínio clínico.
+    </p>
+    <a href="ferramentas.html" class="bg-[#36B58B] hover:bg-[#2e9d79] text-white px-6 py-3 rounded-2xl text-lg shadow-md transition">
+      Explorar ferramentas
+    </a>
+  </section>
+
+  <!-- Destaques -->
+  <section class="bg-[#f0f2f5] dark:bg-soft-dark py-12 px-4 md:px-20 grid md:grid-cols-3 gap-6 text-center">
+    <div class="shadow rounded-2xl p-6 bg-white dark:bg-[#1a1f2b]">
+      <img src="images/icone_livro.png" alt="Baseado em evidência" class="mx-auto w-12 h-12 mb-4">
+      <h3 class="font-semibold text-lg mb-2 text-[#1A2E50]">Baseado em evidência</h3>
+      <p class="text-[#1A2E50]/70 text-sm">Fórmulas e algoritmos embasados em literatura médica confiável.</p>
+    </div>
+    <div class="shadow rounded-2xl p-6 bg-white dark:bg-[#1a1f2b]">
+      <img src="images/icone_estetoscopio.png" alt="Raciocínio clínico" class="mx-auto w-12 h-12 mb-4">
+      <h3 class="font-semibold text-lg mb-2 text-[#1A2E50]">Foco em raciocínio clínico</h3>
+      <p class="text-[#1A2E50]/70 text-sm">Informação estruturada para facilitar seu raciocínio clínico.</p>
+    </div>
+    <div class="shadow rounded-2xl p-6 bg-white dark:bg-[#1a1f2b]">
+      <img src="images/icone_chip.png" alt="Responsivo" class="mx-auto w-12 h-12 mb-4">
+      <h3 class="font-semibold text-lg mb-2 text-[#1A2E50]">Prático e responsivo</h3>
+      <p class="text-[#1A2E50]/70 text-sm">Use no desktop ou no celular sem perder clareza nem desempenho.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-[#A4A7B0] py-6 dark:text-[#94a3b8]">
+    RatioSoma © 2025 • Criado por Gabriel Muhammad • Uso educacional
+  </footer>
+
+  <script>
+    const body = document.getElementById('body');
+    const toggle = document.getElementById('toggle-dark');
+    const toggleMobile = document.getElementById('toggle-dark-mobile');
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+  
+    // 1. Aplica o tema salvo
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark');
+    }
+  
+    // 2. Alterna tema e salva no localStorage
+    function toggleTheme() {
+      body.classList.toggle('dark');
+      const isDark = body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+  
+    toggle?.addEventListener('click', toggleTheme);
+    toggleMobile?.addEventListener('click', toggleTheme);
+  
+    // 3. Menu mobile
+    menuToggle?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
